@@ -1,0 +1,134 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("gamm.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes h1 to the very top */
+}
+
+h1 {
+    width: 100%;
+    margin-top: 0;
+    padding: 1.2rem 1rem;
+    font-size: clamp(1rem, 3vw, 2rem);
+    
+    /* Modern Glassmorphism Nav Style */
+    background: rgba(9, 9, 43, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 2px solid #ef00ff;
+    
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif; /* Sci-fi Gaming Font */
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px #92b1b4, 0 0 15px #00f0ff; /* Neon cyan text glow */
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Prevents overflow breaking UI on tiny mobiles */
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    z-index: 100; /* Ensure it stays above other elements */
+}
+
+.choicse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    flex-wrap: wrap;
+    padding: 0 1rem;
+}
+
+.choice {
+    height: clamp(80px, 20vw, 180px);
+    width: clamp(80px, 20vw, 180px);
+    transition: box-shadow 0.3s ease, transform 0.2s;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choice:hover {
+    box-shadow: -5px -5px 23px #ef00ff, 5px 5px 23px #00f0ff;
+    opacity: 0.9;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+img {
+    height: 90%;
+    width: 90%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: bold;
+    gap: clamp(2rem, 6vw, 4rem);
+    flex-wrap: wrap;
+}
+
+.score p:last-child {
+    font-size: clamp(1rem, 2.5vw, 2rem);
+}
+
+#user-score, #pc-score {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+}
+
+.msg-cont {
+    padding: 0 1rem;
+    margin-bottom: 5vh; /* Keeps it slightly above the bottom bezel */
+}
+
+#msg {
+    font-size: clamp(1.2rem, 3vw, 2.5rem);
+    background-color: #000000;
+    color: #ffffff;
+    display: inline-block;
+    padding: clamp(0.5rem, 2vw, 1rem) clamp(1.5rem, 3vw, 3rem);
+    border-radius: 20px;
+    transition: box-shadow 0.3s ease;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+#msg:hover {
+    box-shadow: -5px -5px 23px #ef00ff, 5px 5px 23px #00f0ff;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+@keyframes shake {
+    0% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-7px) rotate(-8deg); }
+    50% { transform: translateY(0) rotate(8deg); }
+    75% { transform: translateY(-7px) rotate(-8deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+.choice.running {
+    animation: shake 0.5s ease-in-out infinite;
+    box-shadow: -5px -5px 23px #ef00ff, 5px 5px 23px #00f0ff;
+    opacity: 1;
+}
