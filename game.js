@@ -87,7 +87,7 @@ choices.forEach((choice) =>{
     choice.addEventListener("click",()=>{
         const userchoice = choice.getAttribute("id");
         // console.log("choice was click",userchoice)
-        playGame(userchoice);
+       playGame(userchoice);
     })
 
 })
